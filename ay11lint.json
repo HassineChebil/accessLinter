@@ -1,0 +1,12 @@
+{
+  "ignore": ["node_modules/**"],
+  "extensions": [".njk", ".html"],
+  "rules": {
+    "link-name": { "enabled": false },
+    "region": { "enabled": true }
+  },
+  "rulesMessages": {
+    "link-name": "Link name should be a sentence",
+    "region": "Region should be a sentence"
+  }
+}
