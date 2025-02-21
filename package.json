@@ -12,7 +12,9 @@
   "scripts": {
     "build": "tsc && vite build",
     "test": "vitest",
-    "test:coverage": "vitest run --coverage"
+    "test:coverage": "vitest run --coverage",
+    "prepublishOnly": "npm run build && npm run test:coverage",
+    "prepare": "npm run build"
   },
   "files": [
     "dist",
@@ -29,7 +31,7 @@
   ],
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/yourusername/ay11lint.git"
+    "url": "git+https://github.com/HassineChebil/accessLinter.git"
   },
   "devDependencies": {
     "@axe-core/cli": "^4.10.1",
