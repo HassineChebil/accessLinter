@@ -115,7 +115,7 @@ export class AccessibilityLinter {
           line: location.line,
           column: location.column,
           ruleId: violation.id,
-          severity: violation.impact === "critical" ? "error" : "warning",
+          severity: violation.impact === "critical" || violation.impact === "serious" ? "error" : "warning",
           message: violation.help,
           source: node.html,
           fix: {
@@ -170,7 +170,11 @@ export class AccessibilityLinter {
         console.log(chalk.gray(result.source));
         console.log(chalk.green("Suggested fix:"), result.fix?.text);
       });
-      process.exit(1);
+      if(results.filter((result) => result.severity === "error").length > 0) {
+        process.exit(1);
+      }else {
+        process.exit(0);
+      }
     } else {
       console.log(chalk.green("No accessibility issues found! 🎉"));
       process.exit(0);
