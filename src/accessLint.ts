@@ -170,8 +170,10 @@ export class AccessibilityLinter {
         console.log(chalk.gray(result.source));
         console.log(chalk.green("Suggested fix:"), result.fix?.text);
       });
+      process.exit(1);
     } else {
       console.log(chalk.green("No accessibility issues found! 🎉"));
+      process.exit(0);
     }
   }
 }

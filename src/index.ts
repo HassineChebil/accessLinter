@@ -27,9 +27,7 @@ async function main() {
       console.error("Error: Path is neither a file nor a directory");
       process.exit(1);
     }
-
     linter.printResults(results);
-    process.exit(0);
   } catch (error) {
     if (error instanceof Error) {
       console.error("Error:", error.message);
