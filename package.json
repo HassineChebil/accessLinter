@@ -7,7 +7,7 @@
   "type": "module",
   "main": "dist/index.js",
   "bin": {
-    "ay11lint": "./dist/index.js"
+    "ay11lint": "dist/index.js"
   },
   "scripts": {
     "build": "tsc && vite build",
