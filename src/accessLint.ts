@@ -115,7 +115,10 @@ export class AccessibilityLinter {
           line: location.line,
           column: location.column,
           ruleId: violation.id,
-          severity: violation.impact === "critical" || violation.impact === "serious" ? "error" : "warning",
+          severity:
+            violation.impact === "critical" || violation.impact === "serious"
+              ? "error"
+              : "warning",
           message: violation.help,
           source: node.html,
           fix: {
@@ -170,9 +173,21 @@ export class AccessibilityLinter {
         console.log(chalk.gray(result.source));
         console.log(chalk.green("Suggested fix:"), result.fix?.text);
       });
-      if(results.filter((result) => result.severity === "error").length > 0) {
+
+      // Define severity levels hierarchy
+      const severityLevels = {
+        info: ["info", "warning", "error"],
+        warning: ["warning", "error"],
+        error: ["error"],
+      };
+
+      if (
+        results.some((result) =>
+          severityLevels[this.config.severity].includes(result.severity)
+        )
+      ) {
         process.exit(1);
-      }else {
+      } else {
         process.exit(0);
       }
     } else {

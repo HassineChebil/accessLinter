@@ -23,5 +23,5 @@ export async function loadConfig(cwd: string): Promise<LinterOptions> {
         }
     }
     
-    return {extensions: ['.html']};
+    return {extensions: ['.html'], severity: "error"};
 }

@@ -8,5 +8,6 @@
   "rulesMessages": {
     "link-name": "Link name should be a sentence",
     "region": "Region should be a sentence"
-  }
+  },
+  "severity": "error"
 }

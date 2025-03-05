@@ -5,11 +5,12 @@ import { argsChecker, getTargetPath } from "./utils";
 import { loadConfig } from "./utils";
 import { AccessibilityLinter } from "./accessLint";
 import { LinterResult } from "./interfaces";
+import { validateConfig } from "./utils/config";
 
 async function main() {
   const args = argsChecker();
   const config = await loadConfig(process.cwd());
-  const linter = new AccessibilityLinter(config);
+  const linter = new AccessibilityLinter(validateConfig(config));
 
   let targetPath = getTargetPath(args.paths[0], config);
   let results: LinterResult[] = [];

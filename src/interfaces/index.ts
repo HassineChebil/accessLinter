@@ -33,7 +33,5 @@ export interface LinterResult {
     rulesMessages?: {
       [key: string]: string;
     };
-    severity?: {
-      [key: string]: boolean;
-    };
+    severity: 'error' | 'warning' | 'info';
   }

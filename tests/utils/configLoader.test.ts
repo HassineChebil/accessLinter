@@ -38,7 +38,7 @@ describe('loadConfig', () => {
 
     const config = await loadConfig('/test/path');
     
-    expect(config).toEqual({ extensions: ['.html'] });
+    expect(config).toEqual({ extensions: ['.html'], severity: "error" });
     expect(existsSync).toHaveBeenCalledTimes(2); // Checks both possible config files
   });
 
@@ -51,7 +51,7 @@ describe('loadConfig', () => {
     
     const config = await loadConfig('/test/path');
     
-    expect(config).toEqual({ extensions: ['.html'] });
+    expect(config).toEqual({ extensions: ['.html'], severity: "error" });
     expect(consoleSpy).toHaveBeenCalled();
   });
 });
