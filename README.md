@@ -30,9 +30,12 @@ Create an ay11lint.json or .ay11lintrc file in your project root:
   "rulesMessages": {
     "link-name": "Link name should be a sentence",
     "region": "Region should be a sentence"
-  } // custom messages for rules
+  }, // custom messages for rules
+  "severity": "error" | "warning" | "info"
 }
 ```
+
+> The severity field in your configuration determines which issue levels will cause the linter to fail (exit code 1). Higher severity levels include all lower levels. `info > warning > error`
 
 ## Features
 - WCAG 2.0 compliance checking
@@ -40,6 +43,10 @@ Create an ay11lint.json or .ay11lintrc file in your project root:
 - HTML accessibility validation
 - Support for single files and directories
 - Configurable rules and extensions
+- Configurable severity levels with hierarchical behavior:
+  - `error`: Only error-level issues trigger exit code 1
+  - `warning`: Both warnings and errors trigger exit code 1
+  - `info`: All issues (info, warnings, and errors) trigger exit code 1
 
 ## Contributing
 Contributions are welcome! Please read our [contributing guidelines](CONTRIBUTING.md) before submitting a pull request.
