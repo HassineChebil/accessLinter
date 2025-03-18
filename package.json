@@ -1,6 +1,6 @@
 {
   "name": "ay11lint",
-  "version": "1.5.1",
+  "version": "1.5.2",
   "description": "An accessibility linter for HTML files with a focus on WCAG compliance, based on axe-core",
   "license": "MIT",
   "author": "Hassine Chebil",
