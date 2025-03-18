@@ -34,7 +34,6 @@
     "url": "git+https://github.com/HassineChebil/accessLinter.git"
   },
   "devDependencies": {
-    "@axe-core/cli": "^4.10.1",
     "@types/jsdom": "^21.1.7",
     "@types/node": "^22.13.1",
     "@types/nunjucks": "^3.2.6",
